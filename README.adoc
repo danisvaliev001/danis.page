@@ -1,0 +1,29 @@
+= https://danis.page[danis.page] sources
+:hardbreaks-option:
+
+
+== how i running it locally:
+
+
+=== install requirements:
+```
+python3 -m pip install flet
+```
+p.s. flet cli-tool does not installing by poetry yet
+
+
+=== build:
+```
+flet publish app/main.py --web-renderer html --assets assets --app-description danisvaliev001
+```
+
+=== run:
+```
+python3 -m http.server --directory app/dist 8080
+```
+
+
+== how i building it on cloudflare:
+```
+python3 -m pip install pipx && python3 -m pipx run flet publish main.py --web-renderer html --assets assets --app-description danisvaliev001
+```
