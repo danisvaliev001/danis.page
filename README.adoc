@@ -1,18 +1,20 @@
 = danis's page
 :hardbreaks-option:
 
-== install requirements:
+== using locally:
+
+=== install requirements:
 ```
 python3 -m pip install flet
 ```
 p.s. flet cli-tool does not installing by poetry yet
 
-== build:
+=== build:
 ```
 flet publish main.py --web-renderer html --assets assets --app-description danisvaliev001
 ```
 
-== run:
+=== run:
 ```
 python3 -m http.server --directory dist 8080
 ```
