@@ -14,12 +14,9 @@ def unhighlight_link(e):
 def main(page: ft.Page):
     page.title = "danis’s webpage | danisvaliev001"
     page.fonts = {
-        "JetBrainsMono-Regular":
-            "https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/otf/JetBrainsMono-Regular.otf",
-        "JetBrainsMono-Regular_SemiBold":
-            "https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/otf/JetBrainsMono-SemiBold.otf",
-        # "JetBrainsMono-Regular_Thin":
-        #     "https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/otf/JetBrainsMono-Thin.otf",
+        "JetBrainsMono-Regular": "fonts/JetBrainsMono-Regular.otf",
+        "JetBrainsMono-Regular_SemiBold": "fonts/JetBrainsMono-SemiBold.otf",
+        "JetBrainsMono-Regular_Light": "fonts/JetBrainsMono-Light.otf",
     }
     page.theme = ft.Theme(font_family="JetBrainsMono-Regular")
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -36,12 +33,12 @@ def main(page: ft.Page):
 
     container_photo = ft.CircleAvatar(
         content=ft.Image(
-            src=f"imgs/photo.png",
-            fit=ft.ImageFit.FIT_WIDTH,
-            border_radius=50
+            src=f"images/photo.png",
+            fit=ft.ImageFit.SCALE_DOWN,
+            border_radius=80,
         ),
         col={"sm": 12, "md": 12, "xl": 12},
-        height=page.height / 8,
+        radius = 80
     )
 
     container_name = ft.Container(
@@ -98,7 +95,7 @@ def main(page: ft.Page):
             ],
             text_align=ft.TextAlign.CENTER,
             size=10,
-            font_family="JetBrainsMono-Regular",
+            font_family="JetBrainsMono-Regular_Light",
         ),
         col={"sm": 12, "md": 12, "xl": 12},
     )
