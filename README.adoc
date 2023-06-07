@@ -2,9 +2,6 @@
 :hardbreaks-option:
 
 
-== how i running it locally:
-
-
 === install requirements:
 ```
 python3 -m pip install flet
@@ -20,10 +17,4 @@ flet publish app/main.py --web-renderer html --assets assets --app-description d
 === run:
 ```
 python3 -m http.server --directory app/dist 8080
-```
-
-
-== how i building it on cloudflare:
-```
-python3 -m pip install pipx && python3 -m pipx run flet publish main.py --web-renderer html --assets assets --app-description danisvaliev001
 ```
