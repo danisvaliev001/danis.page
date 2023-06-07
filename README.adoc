@@ -1,7 +1,8 @@
 = danis's page
 :hardbreaks-option:
 
-== using locally:
+
+== locally:
 
 === install requirements:
 ```
@@ -17,4 +18,10 @@ flet publish main.py --web-renderer html --assets assets --app-description danis
 === run:
 ```
 python3 -m http.server --directory dist 8080
+```
+
+
+== cloudflare:
+```
+python3 -m pip install flet && export PATH="$HOME/.local/bin:$PATH" && flet publish main.py --web-renderer html --assets assets --app-description danisvaliev001
 ```
