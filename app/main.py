@@ -63,15 +63,6 @@ def main(page: ft.Page):
         content=ft.Text(
             disabled=False,
             spans=[
-                ft.TextSpan("works on "),
-                ft.TextSpan(
-                    "cloudflare",
-                    ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
-                    url="https://pages.cloudflare.com",
-                    on_enter=highlight_link,
-                    on_exit=unhighlight_link,
-                ),
-                ft.TextSpan(", "),
                 ft.TextSpan(
                     "crafted",
                     ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
@@ -95,7 +86,15 @@ def main(page: ft.Page):
                     on_enter=highlight_link,
                     on_exit=unhighlight_link,
                 ),
-                ft.TextSpan(""),
+                ft.TextSpan(", works on "),
+                ft.TextSpan(
+                    "cloudflare",
+                    ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
+                    url="https://pages.cloudflare.com",
+                    on_enter=highlight_link,
+                    on_exit=unhighlight_link,
+                ),
+                ft.TextSpan(" "),
             ],
             text_align=ft.TextAlign.CENTER,
             size=10,
