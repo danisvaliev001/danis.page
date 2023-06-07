@@ -4,20 +4,22 @@
 
 == locally:
 
+
 === install requirements:
 ```
 python3 -m pip install flet
 ```
 p.s. flet cli-tool does not installing by poetry yet
 
+
 === build:
 ```
-flet publish main.py --web-renderer html --assets assets --app-description danisvaliev001
+flet publish app/main.py --web-renderer html --assets assets --app-description danisvaliev001
 ```
 
 === run:
 ```
-python3 -m http.server --directory dist 8080
+python3 -m http.server --directory app/dist 8080
 ```
 
 
