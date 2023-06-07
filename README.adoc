@@ -1,4 +1,4 @@
-= danis's page
+= danis.page resource sources
 :hardbreaks-option:
 
 
