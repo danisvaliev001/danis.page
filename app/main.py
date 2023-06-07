@@ -1,14 +1,8 @@
 import flet as ft
+import os
 
-
-def highlight_link(e):
-    e.control.style.color = ft.colors.BLUE
-    e.control.update()
-
-
-def unhighlight_link(e):
-    e.control.style.color = None
-    e.control.update()
+DEFAULT_FLET_PATH = ''
+DEFAULT_FLET_PORT = 8080
 
 
 def main(page: ft.Page):
@@ -52,9 +46,20 @@ def main(page: ft.Page):
     )
 
     container_button = ft.Container(
-        content=ft.ElevatedButton(text="meet"),
+        content=ft.ElevatedButton(
+            text="meet",
+            url="https://calendly.com/danisvaliev001/15min"
+        ),
         col={"sm": 6, "md": 4, "xl": 3},
     )
+
+    def highlight_link(e):
+        e.control.style.color = ft.colors.BLUE
+        e.control.update()
+
+    def unhighlight_link(e):
+        e.control.style.color = None
+        e.control.update()
 
     container_footer = ft.Container(
         content=ft.Text(
@@ -83,11 +88,11 @@ def main(page: ft.Page):
                     on_enter=highlight_link,
                     on_exit=unhighlight_link,
                 ),
-                ft.TextSpan(", works on "),
+                ft.TextSpan(" using "),
                 ft.TextSpan(
-                    "cloudflare",
+                    "warp",
                     ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
-                    url="https://pages.cloudflare.com",
+                    url="https://www.warp.dev",
                     on_enter=highlight_link,
                     on_exit=unhighlight_link,
                 ),
@@ -121,10 +126,14 @@ def main(page: ft.Page):
     # page.update()
 
 
-ft.app(
-    target=main,
-    view=ft.WEB_BROWSER,
-    port=0,
-    web_renderer="html",
-    assets_dir="assets"
-)
+if __name__ == "__main__":
+    flet_path = os.getenv("FLET_PATH", DEFAULT_FLET_PATH)
+    flet_port = int(os.getenv("FLET_PORT", DEFAULT_FLET_PORT))
+    ft.app(
+        target=main,
+        view=ft.WEB_BROWSER,
+        web_renderer="html",
+        assets_dir="assets",
+        name=flet_path,
+        port=flet_port
+    )
