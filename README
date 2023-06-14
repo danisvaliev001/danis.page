@@ -1,12 +1,12 @@
 .. buid local:
-docker buildx build --tag us-central1-docker.pkg.dev/danispage/gcp-docker-hub/danispage:latest .
+docker buildx build --tag europe-north1-docker.pkg.dev/danispage/docker/danispage:latest .
 
 .. run:
-PORT=8081 && docker run -p 9090:${PORT} -e PORT=${PORT} us-central1-docker.pkg.dev/danispage/gcp-docker-hub/danispage
+PORT=8081 && docker run -p 9090:${PORT} -e PORT=${PORT} europe-north1-docker.pkg.dev/danispage/docker/danispage:latest
 
 .. stop all containers:
 $ docker stop $(docker ps --all --quiet) | true
 
 
 .. build with push:
-docker buildx build --push --platform linux/amd64 --tag us-central1-docker.pkg.dev/danispage/gcp-docker-hub/danispage:latest .
+docker buildx build --push --platform linux/amd64 --tag europe-north1-docker.pkg.dev/danispage/docker/danispage:latest .

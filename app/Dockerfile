@@ -8,4 +8,4 @@ RUN python3 -m pip install --no-cache-dir flet==0.7.4
 
 EXPOSE $PORT
 
-CMD FLET_PORT=$PORT python3 main.py
+CMD flet run --web --port $PORT main.py
